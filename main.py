@@ -21,3 +21,6 @@ Base.metadata.create_all(bind=engine)
 app.include_router(product_router, prefix="/products", tags=["Products"])
 
 
+@app.get("/")
+def root():
+    return {"message": "Backend is live"}
